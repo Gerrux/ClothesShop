@@ -1,0 +1,35 @@
+﻿<Window x:Class="ClothesShop.WPF.Views.ModalWindows.UpdateWarehouseModalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClothesShop.WPF.Views.ModalWindows"
+        mc:Ignorable="d"
+        Title="Обновить склад" 
+        SizeToContent="WidthAndHeight" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="/Source/Images/icon.ico">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock>Название склада:</TextBlock>
+        <TextBox Name="nameBox" Grid.Row="1" MinWidth="250" Text="{Binding WarehouseName}"/>
+
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button IsDefault="True" 
+                    Command="{Binding UpdateCommand}" 
+                    MinWidth="60" 
+                    Margin="0,0,10,0" 
+                    Content="Обновить"/>
+            <Button IsCancel="True" 
+                    MinWidth="60" 
+                    Content="Отмена"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>

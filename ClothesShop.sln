@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRRX.ComponentModels", "GRRX.ComponentModels\GRRX.ComponentModels.csproj", "{DF847344-1F41-464E-BFF1-AD54D9B3C439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesShop.WPF", "ClothesShop.WPF\ClothesShop.WPF.csproj", "{870D34B0-7DB7-4624-B029-69D194774D30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22} = {43FEA679-262C-4C9D-9EBF-B25453A4DC22}
+		{9809AB04-9085-4387-A4DB-DC2E06B02D58} = {9809AB04-9085-4387-A4DB-DC2E06B02D58}
+		{DF847344-1F41-464E-BFF1-AD54D9B3C439} = {DF847344-1F41-464E-BFF1-AD54D9B3C439}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesShop.ServerAPI", "ClothesShop.ServerAPI\ClothesShop.ServerAPI.csproj", "{FC0F95F1-5549-4464-B011-8DE303E401C9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22} = {43FEA679-262C-4C9D-9EBF-B25453A4DC22}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesShop.Domain", "ClothesShop.Domain\ClothesShop.Domain.csproj", "{43FEA679-262C-4C9D-9EBF-B25453A4DC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothesShop.Persistence", "ClothesShop.Persistence\ClothesShop.Persistence.csproj", "{9809AB04-9085-4387-A4DB-DC2E06B02D58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF847344-1F41-464E-BFF1-AD54D9B3C439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF847344-1F41-464E-BFF1-AD54D9B3C439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF847344-1F41-464E-BFF1-AD54D9B3C439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF847344-1F41-464E-BFF1-AD54D9B3C439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870D34B0-7DB7-4624-B029-69D194774D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870D34B0-7DB7-4624-B029-69D194774D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870D34B0-7DB7-4624-B029-69D194774D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870D34B0-7DB7-4624-B029-69D194774D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0F95F1-5549-4464-B011-8DE303E401C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0F95F1-5549-4464-B011-8DE303E401C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0F95F1-5549-4464-B011-8DE303E401C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0F95F1-5549-4464-B011-8DE303E401C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43FEA679-262C-4C9D-9EBF-B25453A4DC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9809AB04-9085-4387-A4DB-DC2E06B02D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9809AB04-9085-4387-A4DB-DC2E06B02D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9809AB04-9085-4387-A4DB-DC2E06B02D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9809AB04-9085-4387-A4DB-DC2E06B02D58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E671EECE-B08E-48FA-BE7E-9EAA7F9E78ED}
+	EndGlobalSection
+EndGlobal

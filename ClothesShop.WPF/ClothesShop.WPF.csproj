@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Source\Images\accept.png" />
+    <None Remove="Source\Images\close.png" />
+    <None Remove="Source\Images\delete.png" />
+    <None Remove="Source\Images\expand-off.png" />
+    <None Remove="Source\Images\expand.png" />
+    <None Remove="Source\Images\icon.ico" />
+    <None Remove="Source\Images\left.png" />
+    <None Remove="Source\Images\Logo.png" />
+    <None Remove="Source\Images\placeholder.png" />
+    <None Remove="Source\Images\right.png" />
+    <None Remove="Source\Images\roll-up.png" />
+    <None Remove="Source\Images\sort-down.png" />
+    <None Remove="Source\Images\sort-up.png" />
+    <None Remove="Source\Images\update.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClothesShop.Persistence\ClothesShop.Persistence.csproj" />
+    <ProjectReference Include="..\GRRX.ComponentModels\GRRX.ComponentModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Source\Images\accept.png" />
+    <Resource Include="Source\Images\close.png" />
+    <Resource Include="Source\Images\delete.png" />
+    <Resource Include="Source\Images\expand-off.png" />
+    <Resource Include="Source\Images\expand.png" />
+    <Resource Include="Source\Images\icon.ico" />
+    <Resource Include="Source\Images\left.png" />
+    <Resource Include="Source\Images\Logo.png" />
+    <Resource Include="Source\Images\placeholder.png" />
+    <Resource Include="Source\Images\right.png" />
+    <Resource Include="Source\Images\roll-up.png" />
+    <Resource Include="Source\Images\sort-down.png" />
+    <Resource Include="Source\Images\sort-up.png" />
+    <Resource Include="Source\Images\update.png" />
+  </ItemGroup>
+
+</Project>

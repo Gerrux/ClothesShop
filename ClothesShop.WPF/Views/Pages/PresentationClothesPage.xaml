@@ -1,0 +1,219 @@
+﻿<Page x:Class="ClothesShop.WPF.Views.Pages.PresentationClothesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClothesShop.WPF.Views.Pages" 
+      xmlns:viewmodels="clr-namespace:ClothesShop.WPF.ViewModels" 
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="800"
+      Title="PresentationClothesPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Width="240"
+                Height="360"
+                BorderThickness="2"
+                BorderBrush="DarkBlue"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Margin="0 20">
+            <Grid Background="{x:Null}"
+                  VerticalAlignment="Center">
+                <Button HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Panel.ZIndex="1"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Command="{Binding PrevImageCommand}">
+                    <Image Source="/Source/Images/left.png" Width="20" Height="20"/>
+                </Button>
+                <Image Source="{Binding PhotoPath}" HorizontalAlignment="Center" Panel.ZIndex="0"/>
+                <Button HorizontalAlignment="Right" 
+                        VerticalAlignment="Center"
+                        Panel.ZIndex="1"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Command="{Binding FollowImageCommand}">
+                    <Image Source="/Source/Images/right.png" Width="20" Height="20"/>
+                </Button>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Margin="20" 
+                    VerticalAlignment="Center" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource StyledTextBlock}"/>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Setters>
+                        <Setter Property="Margin" Value="10 5"/>
+                        <Setter Property="Padding" Value="10 5"/>
+                        <Setter Property="Background" Value="DarkBlue"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Style.Setters>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="{Binding ClothesId}"
+                       Foreground="LightGray"/>
+            <TextBlock Text="{Binding ClothesName}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="5 10"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ClothesCost}"
+                           FontSize="24" 
+                           FontWeight="Bold"  
+                           Margin="5,10,0,10"
+                           Foreground="#222899"/>
+                <TextBlock Text="руб."
+                           FontSize="16" 
+                           FontWeight="Bold"  
+                           Margin="5,15,0,10"
+                           Foreground="#222899"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Описание:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesDescription}"/>
+            </StackPanel>
+            <Button HorizontalAlignment="Left"
+                    Padding="16,8"
+                    Content="Заказать"
+                    Command="{Binding CreateOrderCommand}"/>
+            <TextBlock Text="Характеристики:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Тип:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesType}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Половая принадлежность:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesGender}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Сезон:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesSeason}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Производитель:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesManufacturer}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Склад:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesWarehouse}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Поставщик:"
+                           Foreground="Gray"/>
+                <TextBlock Text="{Binding ClothesSupplier}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Удалить" Command="{Binding DeleteClothesCommand}"/>
+                <Button Content="Редактировать" Command="{Binding UpdateClothesCommand}"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       Margin="15 0 0 0"
+                       Text="Рекомендуемые товары"/>
+            <ListBox ItemsSource="{Binding MyItemsSource}"
+                     Background="Transparent"
+                     BorderBrush="{x:Null}"
+                     Grid.Row="1">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Height="auto" 
+                            Width="auto" 
+                            Background="#DADBF9" 
+                            Margin="10,5"
+                            MouseLeftButtonDown="OpenClothes_MouseLeftButtonDown"
+                            Tag="{Binding ClothesId}">
+                            <StackPanel HorizontalAlignment="Center">
+                                <Border Width="140"
+                                    Height="210"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2">
+                                    <Grid Background="{x:Null}"
+                                      VerticalAlignment="Center">
+                                        <Button HorizontalAlignment="Left" 
+                                            VerticalAlignment="Center"
+                                            Panel.ZIndex="1"
+                                            Background="{x:Null}"
+                                            BorderBrush="{x:Null}"
+                                            CommandParameter="{Binding Id}"
+                                            Command="{Binding DataContext.RecomPrevImageCommand,RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}">
+                                            <Image Source="/Source/Images/left.png" Width="20" Height="20"/>
+                                        </Button>
+                                        <Image Source="{Binding CurrentImagePath}" HorizontalAlignment="Center" Panel.ZIndex="0"/>
+                                        <Button HorizontalAlignment="Right" 
+                                            VerticalAlignment="Center"
+                                            Panel.ZIndex="1"
+                                            Background="{x:Null}"
+                                            BorderBrush="{x:Null}"
+                                            CommandParameter="{Binding Id}"
+                                            Command="{Binding DataContext.RecomFollowImageCommand,RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}">
+                                            <Image Source="/Source/Images/right.png" Width="20" Height="20"/>
+                                        </Button>
+                                    </Grid>
+                                </Border>
+                                <TextBlock Width="150" 
+                                   Height="auto" 
+                                   TextWrapping="Wrap" 
+                                   Text="{Binding Name}" 
+                                   FontSize="12" 
+                                   FontWeight="Bold" 
+                                   Margin="5,10" 
+                                   Foreground="Black"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Cost}"
+                                       FontSize="16" 
+                                       FontWeight="Bold"  
+                                       Margin="15,0,0,10"
+                                       Foreground="#222899"/>
+                                    <TextBlock Text="руб."
+                                           FontSize="12" 
+                                           FontWeight="Bold"  
+                                           Margin="5,2,0,10"
+                                           Foreground="#222899"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,56 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+        xmlns:ViewModels="clr-namespace:ClothesShop.WPF.ViewModels" x:Class="ClothesShop.WPF.MainWindow"
+        mc:Ignorable="d"
+        Title="ClothesShop"
+        MinHeight="768" 
+        MinWidth="1360" d:DataContext="{d:DesignInstance {x:Type ViewModels:MainWindowViewModel}, IsDesignTimeCreatable=True}" 
+        Icon="/Source/Images/icon.ico"
+        FontFamily="Tw Cen MT">
+    <Border Background="{DynamicResource BgGradientBrush}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region "Left navbar"-->
+
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource MenuButtonTheme}"/>
+                </StackPanel.Resources>
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                    <Image Source="/Source/Images/Logo.png" Margin="15 0 0 0" Height="30"/>
+                    <TextBlock Text="ClothesShop" FontSize="30" Margin="10 5 0 5"/>
+                </StackPanel>
+                <RadioButton Content="Товары" Click="ClothesButton_Click"/>
+                <RadioButton Content="Типы одежды" Click="ClothesTypesButton_Click"/>
+                <RadioButton Content="Производители" Click="ManufacturersButton_Click"/>
+                <RadioButton Content="Поставщики" Click="SuppliersButton_Click"/>
+                <RadioButton Content="Склады" Click="WarehousesButton_Click"/>
+                <RadioButton Content="Заказы" Click="OrdersButton_Click"/>
+            </StackPanel>
+
+            <!--#endregion-->
+
+            <!--#region "Main content"-->
+            <Frame x:Name="MainFrame" 
+                   Grid.Row="1" 
+                   Grid.Column="2" 
+                   Grid.RowSpan="2" 
+                   NavigationUIVisibility="Hidden"/>
+            <!--#endregion-->
+            
+        </Grid>
+    </Border>
+</Window>
